@@ -1,0 +1,9 @@
+movq %rdx, %rcx
+movq %rdi, %r8
+shrq %cl, %rdi
+xorq %r8, %rdi
+andq %rsi, %rdi
+movq %rdi, %rax
+xorq %rdi, %r8
+shlq %cl, %rax
+xorq %r8, %rax

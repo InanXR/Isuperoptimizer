@@ -1,0 +1,27 @@
+[package]
+name = "isuperoptimizer"
+version = "0.1.0"
+edition = "2021"
+description = "Certificate-first superoptimizer for a curated x86-64 subset: semantics, SMT equivalence, enumeration certificates, and MCMC search"
+
+[lib]
+name = "isuperoptimizer"
+path = "src/lib.rs"
+
+[[bin]]
+name = "stress"
+path = "src/bin/stress.rs"
+
+[[bin]]
+name = "recheck"
+path = "src/bin/recheck.rs"
+
+[[bin]]
+name = "isuperopt"
+path = "src/bin/isuperopt.rs"
+
+# Zero external dependencies by design (ADR-005). The only external tool is
+# the z3 binary, located via ISUPEROPT_Z3 or PATH.
+
+[profile.release]
+opt-level = 3
